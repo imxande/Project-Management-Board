@@ -1,16 +1,19 @@
 .board{
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
-    flex-direction: row;
-    margin: 5%;
+    margin: 5px;
+    width: 23%;    
 }
 
 .board-headers{
     border: 1px solid rgb(151, 150, 150);
-    width: 20%;
-    height: 300px;
     background-color: rgb(223, 217, 217);
     border-radius: 10px;
-    font-size: xx-large;
     text-decoration: underline;
+    height: 300px;
+    width: 100%;
+}
+
+.board-headers header{
+    font-size: xx-large;
 }

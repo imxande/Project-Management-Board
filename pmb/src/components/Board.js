@@ -1,21 +1,26 @@
 import React from "react";
 import "./Board.css";
+import BoardCard from "./BoardCard";
 
-const Board = () => {
+const Board = ({ jsonData }) => {
+  console.log(jsonData);
+
+  const lanes = [
+    { id: 1, title: "TO DO" },
+    { id: 2, title: "In Progress" },
+    { id: 3, title: "Review" },
+    { id: 4, title: "Done" },
+  ];
+
   return (
-    <div className="board">
-      <div className="board-headers">
-        <p>To Do</p>
-      </div>
-      <div className="board-headers">
-        <p>In Progress</p>
-      </div>
-      <div className="board-headers">
-        <p>Review</p>
-      </div>
-      <div className="board-headers">
-        <p>Done</p>
-      </div>
+    <div>
+      {lanes.map((lane) => (
+        <div key={lane.id} className="board">
+          <div className="board-headers">
+            <header>{lane.title}</header>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
