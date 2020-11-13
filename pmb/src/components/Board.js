@@ -1,9 +1,8 @@
 import React from "react";
 import "./Board.css";
-import BoardCard from "./BoardCard";
 
 const Board = ({ jsonData }) => {
-  console.log(jsonData);
+  console.log("Props:", jsonData);
 
   const lanes = [
     { id: 1, title: "TO DO" },
@@ -12,12 +11,19 @@ const Board = ({ jsonData }) => {
     { id: 4, title: "Done" },
   ];
 
+  const filteredLane = (data, id) => {
+    if (data.id === id) {
+      console.log("Filtered:", data, id);
+    }
+  };
+
   return (
     <div>
       {lanes.map((lane) => (
         <div key={lane.id} className="board">
           <div className="board-headers">
             <header>{lane.title}</header>
+            <p> {filteredLane(jsonData, lane.id)}</p>
           </div>
         </div>
       ))}
